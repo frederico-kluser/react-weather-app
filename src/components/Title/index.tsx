@@ -1,4 +1,3 @@
-import React from 'react';
 import TitleContainer from './styled';
 
 const Title = ({text}: any) => (

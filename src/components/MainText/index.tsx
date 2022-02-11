@@ -1,4 +1,3 @@
-import React from 'react';
 import MainTextContainer, { H1, H2, H3 } from './styled';
 
 interface MainTextInterface {

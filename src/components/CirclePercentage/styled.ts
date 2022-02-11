@@ -1,6 +1,15 @@
 import styled from 'styled-components';
 import { mobileChanges } from '../../utils/style';
 
+interface percentageInterface {
+  percentage: number;
+}
+
+interface PercentageBarInterface {
+  mask?: boolean;
+  right?: boolean;
+}
+
 const CirclePercentageContainer = styled.div`
   margin: 55px;
   margin-top: 55px;
@@ -28,9 +37,9 @@ const wrapperChildStyle = `
   width: 100%;
 `;
 
-export const Left = styled.div`
+export const Left = styled.div<percentageInterface>`
   ${wrapperChildStyle}
-  transform: rotate(45deg);
+  transform: rotate(${({ percentage }) => percentage * 3.6 > 180 ? 180 : percentage * 3.6}deg);
   z-index: 1;
 `;
 
@@ -44,16 +53,15 @@ export const MaskRight = styled.div`
 `;
 
 
-export const Right = styled.div`
+export const Right = styled.div<percentageInterface>`
   ${wrapperChildStyle}
-  transform: scale(0) rotate(0deg);
+  ${({ percentage }) => (percentage - 50) * 3.6 <= 180 && (percentage - 50) > 0 ? `
+    transform: scale(1) rotate(${(percentage - 50) * 3.6}deg);
+  ` : `
+    transform: scale(0) rotate(0deg);
+  `}
   z-index: 2;
 `;
-
-interface PercentageBarInterface {
-  mask?: boolean;
-  right?: boolean;
-}
 
 export const PercentageBar = styled.div<PercentageBarInterface>`
   background-color: ${({mask}) => mask ? '#ECEFF1' : '#03A9F4'};

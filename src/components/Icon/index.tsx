@@ -1,4 +1,3 @@
-import React from 'react';
 import { ICONS, IconType } from '../../utils/icons';
 import ImageContainer from './styled';
 

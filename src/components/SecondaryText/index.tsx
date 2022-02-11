@@ -1,4 +1,3 @@
-import React from 'react';
 import ScondaryTextContainer from './styled';
 
 interface ScondaryTextInterface {
