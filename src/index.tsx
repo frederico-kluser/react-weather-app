@@ -1,12 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Flex from './components/Flex';
+import Title from './components/Title';
+import SubTitle from './components/SubTitle';
+import MainText from './components/MainText';
+import Image from './components/Icon';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Flex>
+      <Title text="Belgrade, Serbia" />
+      <SubTitle text="Belgrade, Serbia" />
+      <Flex row>
+        <MainText temperature='23' status='Partly Sunny' lastUpdate='1:48pm' />
+        <Image icon='cloudDay' />
+      </Flex>
+      {/* 
+      <Flex row></Flex>
+      <Flex row></Flex> */}
+    </Flex>
   </React.StrictMode>,
   document.getElementById('root')
 );
