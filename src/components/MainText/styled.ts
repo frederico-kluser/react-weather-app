@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediaQuery } from '../../utils/style';
+import { mobileChanges } from '../../utils/style';
 
 const margin = 'margin: 0px;';
 const marginTop = 'margin-top: 25px;';
@@ -12,7 +12,7 @@ export const H1 = styled.h1`
   font-size: 9em;
   margin-top: 0;
   ${margin}
-  ${mediaQuery(`
+  ${mobileChanges(`
     font-size: 6em;
     ${marginTop}
   `)}
@@ -21,9 +21,9 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   font-size: 2.4em;
   font-weight: 100;
-  margin-top: -25px;
   ${margin}
-  ${mediaQuery(marginTop)}
+  margin-top: -25px;
+  ${mobileChanges(marginTop)}
 `;
 
 export const H3 = styled.h3`
@@ -31,7 +31,7 @@ export const H3 = styled.h3`
   font-weight: 100;
   margin-top: 10px;
   ${margin}
-  ${mediaQuery(marginTop)}
+  ${mobileChanges(marginTop)}
 `;
 
 

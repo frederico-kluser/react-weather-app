@@ -1,4 +1,4 @@
-export const mediaQuery = (properties: string) => `
+export const mobileChanges = (properties: string) => `
 @media (max-width: 768px) {
   ${properties}
 }
