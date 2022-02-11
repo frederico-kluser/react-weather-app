@@ -1,8 +1,9 @@
+import { IconType } from '../../utils/icons';
 import MainTextContainer, { H1, H2, H3 } from './styled';
 
 interface MainTextInterface {
   temperature: number;
-  status: string;
+  status: IconType;
   lastUpdate: string;
 }
 

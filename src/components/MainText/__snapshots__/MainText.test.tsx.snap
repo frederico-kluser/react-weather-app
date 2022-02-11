@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainText Renderer 1`] = `
+<div
+  className="sc-bdvvtL bKhKNO"
+>
+  <h1
+    className="sc-gsDKAQ bAFsMA"
+  >
+    20
+    °C
+  </h1>
+  <h2
+    className="sc-dkPtRN eBfRnW"
+  >
+    Heavy shower snow
+  </h2>
+  <h3
+    className="sc-hKwDye dzNrnq"
+  >
+    Atualizado 
+    14:40
+  </h3>
+</div>
+`;
