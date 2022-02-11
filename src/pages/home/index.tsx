@@ -8,35 +8,20 @@ import ScondaryText from '../../components/SecondaryText';
 import SubTitle from '../../components/SubTitle';
 import Title from '../../components/Title';
 import Wrapper from './styled';
-import env from "react-dotenv";
-import { convertKelvinToCelsius, convertStatusText, dateFormat, dayOfWeek, getTime, monthOfYear } from '../../utils/conversor';
-
-const location = {
-  latitude: 0,
-  longitude: 0,
-}
-
-const updateLocationInfo = async () => {
-  const requestOptions: any = {
-    method: 'GET',
-    redirect: 'follow'
-  };
-  
-  return fetch(`http://api.openweathermap.org/data/2.5/weather?appid=${env.OPENWEATHERMAP_API_KEY}&lat=${location.latitude}&lon=${location.longitude}`, requestOptions)
-};
+import { convertKelvinToCelsius, convertStatusText, dateFormat, getTime } from '../../utils/conversor';
+import { weatherMock } from '../../utils/mock';
+import { updateLocationInfo } from '../../utils/openWeaTherMapAPI';
 
 const Home = () => { 
-  
+
   const [isLoading, setIsLoading] = useState(true);
   const [locationAllowed, setLocationAllowed] = useState(true);
-  const [weather, setWeather]: any = useState(false);
+  const [weather, setWeather] = useState(weatherMock);
 
   const reloadGeolocation = () => {
     setIsLoading(true);
     navigator.geolocation.getCurrentPosition((position) => {
-      location.latitude = position.coords.latitude;
-      location.longitude = position.coords.longitude;
-      updateLocationInfo().then(response => response.json())
+      updateLocationInfo(position.coords.latitude, position.coords.longitude).then(response => response.json())
       .then(result => {
         setWeather({
           ...result,
@@ -46,7 +31,7 @@ const Home = () => {
       }).catch(error => console.log('error', error));
     }, () => {
       setLocationAllowed(false);
-      console.error("Geolocation is not allowed by this browser.");
+      console.error("Geolocalização não é permitida por este navegador.");
     });
   };
 
@@ -61,7 +46,7 @@ const Home = () => {
 
   return (
     <Flex>
-      { (locationAllowed && !!weather) && <>
+      { locationAllowed && <>
         <Wrapper opacity={isLoading ? 0.3 : 1}>
           <Title text={`${weather.name}, ${weather.sys.country}`} />
           <SubTitle text={dateFormat(weather.date)} />
