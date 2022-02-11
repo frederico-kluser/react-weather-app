@@ -1,6 +1,10 @@
 import TitleContainer from './styled';
 
-const Title = ({text}: any) => (
+interface TitleInterface {
+  text: string;
+}
+
+const Title = ({text}: TitleInterface) => (
   <TitleContainer>{text}</TitleContainer>
 );
 
