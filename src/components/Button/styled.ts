@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 import { mobileChanges } from '../../utils/style';
 
-const ButtonContainer = styled.div`
+interface ButtonContainerInterface {
+  isLoading: boolean;
+}
+
+const ButtonContainer = styled.div<ButtonContainerInterface>`
             user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
         -ms-user-select: none; /* Internet Explorer/Edge */
        -moz-user-select: none; /* Old versions of Firefox */
@@ -21,7 +25,6 @@ const ButtonContainer = styled.div`
   position: relative;
   transition: all 0.25s;
   width: 250px;
-  ${mobileChanges('margin-top: 0px;')}
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -30,6 +33,8 @@ const ButtonContainer = styled.div`
   &:active {
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }
+
+  ${({isLoading}) => isLoading && `box-shadow: initial;`}
 `;
 
 export const Icon = styled.img`

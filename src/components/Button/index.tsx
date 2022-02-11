@@ -1,10 +1,14 @@
 import ButtonContainer, { Icon } from './styled';
 import "./style.css";
 
-const Button = () => (
-  <ButtonContainer id="Button">
-    <Icon className='icon' src={require('../../assets/icon.png')} />
-    <Icon className='animation' src={require('../../assets/gif.gif')} />
+interface ButtonInterface {
+  isLoading: boolean;
+}
+
+const Button = ({isLoading}: ButtonInterface) => (
+  <ButtonContainer id="Button" isLoading={isLoading}>
+    {!isLoading && <Icon className='icon' src={require('../../assets/icon.png')} />}
+    <Icon className={isLoading ? '' : 'animation'} src={require('../../assets/gif.gif')} />
     Realoading
   </ButtonContainer>
 );
