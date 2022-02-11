@@ -23,6 +23,7 @@ export const H2 = styled.h2`
   font-weight: 100;
   ${margin}
   margin-top: -25px;
+  text-transform: capitalize;
   ${mobileChanges(marginTop)}
 `;
 

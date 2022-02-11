@@ -20,7 +20,6 @@ const ButtonContainer = styled.div<ButtonContainerInterface>`
   line-height: 75px;
   margin: 0 auto;
   margin-bottom: 50px;
-  margin-top: 50px;
   padding-left: 50px;
   position: relative;
   transition: all 0.25s;
@@ -34,7 +33,17 @@ const ButtonContainer = styled.div<ButtonContainerInterface>`
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }
 
-  ${({isLoading}) => isLoading && `box-shadow: initial;`}
+  ${({isLoading}) => isLoading && `
+    box-shadow: initial;
+    &:hover {
+      box-shadow: initial;
+    }
+  
+    &:active {
+      box-shadow: initial;
+    }
+  `}
+  ${mobileChanges('margin-top: 25px;')}
 `;
 
 export const Icon = styled.img`

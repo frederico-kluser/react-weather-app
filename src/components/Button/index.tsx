@@ -3,13 +3,14 @@ import "./style.css";
 
 interface ButtonInterface {
   isLoading: boolean;
+  onClick: () => void;
 }
 
-const Button = ({isLoading}: ButtonInterface) => (
-  <ButtonContainer id="Button" isLoading={isLoading}>
+const Button = ({isLoading, onClick}: ButtonInterface) => (
+  <ButtonContainer id="Button" isLoading={isLoading} onClick={onClick}>
     {!isLoading && <Icon className='icon' src={require('../../assets/icon.png')} />}
     <Icon className={isLoading ? '' : 'animation'} src={require('../../assets/gif.gif')} />
-    Realoading
+    {isLoading ? 'Reloading' : 'Reload' }
   </ButtonContainer>
 );
 
