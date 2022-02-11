@@ -1,6 +1,10 @@
 import SubTitleContainer from './styled';
 
-const SubTitle = ({text}: any) => (
+interface SubTitleInterface {
+  text: string;
+}
+
+const SubTitle = ({text}: SubTitleInterface) => (
   <SubTitleContainer>{text}</SubTitleContainer>
 );
 
