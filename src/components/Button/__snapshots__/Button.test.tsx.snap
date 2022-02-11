@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button Renderer 1`] = `
+<div
+  className="sc-bdvvtL heCHEn"
+  id="Button"
+  onClick={[Function]}
+>
+  <img
+    className="sc-gsDKAQ eVRIcU"
+    src="gif.gif"
+  />
+  Reloading
+</div>
+`;

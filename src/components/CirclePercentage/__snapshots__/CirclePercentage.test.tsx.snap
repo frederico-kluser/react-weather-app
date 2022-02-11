@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CirclePercentage Renderer 1`] = `
+<div
+  className="sc-bdvvtL jNZzJu"
+>
+  <div
+    className="sc-gsDKAQ kYaQpG"
+  >
+    <div
+      className="sc-dkPtRN sc-hKwDye cGrGOS iJtgLh"
+    >
+      <div
+        className="sc-iCfMLu ibKbMU"
+      />
+    </div>
+    <div
+      className="sc-dkPtRN sc-gKclnd cGrGOS iBVxSz"
+    >
+      <div
+        className="sc-iCfMLu dmEJNq"
+      />
+    </div>
+    <div
+      className="sc-dkPtRN sc-eCImPb cGrGOS bWiBcC"
+    >
+      <div
+        className="sc-iCfMLu kzedr"
+        mask={true}
+      />
+    </div>
+    <div
+      className="sc-dkPtRN sc-jRQBWg cGrGOS"
+    >
+      <div
+        className="sc-iCfMLu lgNKhl"
+        mask={true}
+      />
+    </div>
+    <div
+      className="sc-furwcr gvmbxW"
+    >
+      60
+      %
+    </div>
+  </div>
+  <div
+    className="sc-pVTFL jaRGOm"
+  >
+    Humidade
+  </div>
+</div>
+`;
