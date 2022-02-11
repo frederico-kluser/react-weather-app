@@ -14,6 +14,7 @@ const CirclePercentageContainer = styled.div`
   margin: 55px;
   margin-top: 55px;
   ${mobileChanges(`
+    margin: 0;
     margin-top: 25px;
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@ export const Wrapper = styled.div`
   width: 165px;
 `;
 
-const wrapperChildStyle = `
+export const WrapperChild = styled.div`
   height: 100%;
   left: 0;
   position: absolute;
@@ -37,24 +38,19 @@ const wrapperChildStyle = `
   width: 100%;
 `;
 
-export const Left = styled.div<percentageInterface>`
-  ${wrapperChildStyle}
+export const Left = styled(WrapperChild)<percentageInterface>`
   transform: rotate(${({ percentage }) => percentage * 3.6 > 180 ? 180 : percentage * 3.6}deg);
   z-index: 1;
 `;
 
-export const MaskLeft = styled.div`
-  ${wrapperChildStyle}
+export const MaskLeft = styled(WrapperChild)`
   z-index: 1;
 `;
 
-export const MaskRight = styled.div`
-  ${wrapperChildStyle}
-`;
+export const MaskRight = styled(WrapperChild)``;
 
 
-export const Right = styled.div<percentageInterface>`
-  ${wrapperChildStyle}
+export const Right = styled(WrapperChild)<percentageInterface>`
   ${({ percentage }) => (percentage - 50) * 3.6 <= 180 && (percentage - 50) > 0 ? `
     transform: scale(1) rotate(${(percentage - 50) * 3.6}deg);
   ` : `

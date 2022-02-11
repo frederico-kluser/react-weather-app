@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import CirclePercentage from '../../components/CirclePercentage';
 import Flex from '../../components/Flex';
 import Image from '../../components/Icon';
@@ -20,8 +21,11 @@ const Home = () => (
       <ScondaryText text="Humidity 41%" />
     </Flex>
     <Flex row>
-      <CirclePercentage text="Humidity" percentage={97} />
+      <CirclePercentage text="Humidity" percentage={87} />
+      <CirclePercentage text="Wind" percentage={27} />
+      <CirclePercentage text="Rain" percentage={59} />
     </Flex>
+    <Button />
   </Flex>
 );
 

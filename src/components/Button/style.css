@@ -1,0 +1,11 @@
+.animation {
+  opacity: 0;
+}
+
+:is(#Button:hover, #Button:active) > .animation {
+  opacity: 1;
+}
+
+:is(#Button:hover, #Button:active) > .icon {
+  opacity: 0;
+}
